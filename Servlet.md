@@ -28,7 +28,7 @@
         <url-pattern>/abc</url-pattern>
       </servlet-mapping>
 ****
-      @Override
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet"); //后台打印，会打印到tomcat的后台界面
             response.getWriter().write("<a href='http://www.baidu.com'>go</a>");
