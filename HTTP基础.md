@@ -14,13 +14,13 @@
 >>> ###### classes  *存放编译好的servlet*
 >> ###### META-INF *存放web app的上下文信息，符合J2EE标准，可无*
 
-  <?xml version="1.0" encoding="ISO-8859-1"?>
+    <?xml version="1.0" encoding="ISO-8859-1"?>
 
-  <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-                        http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-    version="3.1"
-    metadata-complete="true">
+    <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+      version="3.1"
+      metadata-complete="true">
 
-  </web-app>
+    </web-app>
