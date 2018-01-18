@@ -2,8 +2,8 @@
 > - 必须实现**Servlet**接口
 > - `void service(ServletRequest req, ServletResponse res)` *最重要的方法，被容器直接调用*
 > - 给web用的继承类**HttpServlet**
-> 一个Servlet被调用的时候默认掉用service方法
-> *构建路径-> 引入外部归档 导入 servlet-api.jar*
+> - 一个Servlet被调用的时候默认掉用service方法
+> - *构建路径-> 引入外部归档 导入 servlet-api.jar*
 
 ### HttpServlet
 > HttpServlet() 被容器调用
