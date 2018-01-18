@@ -14,6 +14,7 @@
 >>> ###### classes  *存放编译好的servlet*
 >> ###### META-INF *存放web app的上下文信息，符合J2EE标准，可无*
 
+#### web.xml
     <?xml version="1.0" encoding="ISO-8859-1"?>
 
     <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
