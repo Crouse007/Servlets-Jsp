@@ -68,4 +68,9 @@
 
 	}
 
-### 
+### 用doGet和doPost方法处理请求
+> `protected void doGet(HttpServletRequest req, HttpServletResponse resp)`
+> `protected void doPost(HttpServletRequest req, HttpServletResponse resp)` 
+>> java.lang.String getParameter(java.lang.String name)
+
+	PrintWriter pw = response.getWriter();
