@@ -128,3 +128,26 @@
 			pw.println("</br>");
 		}
 	}
+> **一个servlet/jsp设置的Cookie能被同一路径下或者子路径(url)下的servlet或jsp读到**
+>> 能读到：
+
+	<servlet-mapping>
+		<servlet-name>SetCookies</servlet-name>
+		<url-pattern>/servlet/SetCookies</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowCookie</servlet-name>
+		<url-pattern>/ShowCookie</url-pattern>
+	</servlet-mapping>
+> *****	
+>> 不能读到：
+	<servlet-mapping>
+		<servlet-name>SetCookies</servlet-name>
+		<url-pattern>/SetCookies</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowCookie</servlet-name>
+		<url-pattern>/servlet/ShowCookie</url-pattern>
+	</servlet-mapping>
+	
+	
