@@ -46,7 +46,7 @@
  > void init(ServletConfig config) //init()方法只执行一次，第一次初始化的时候                 
  > void service(ServletRequest req,ServletResponse res)throws ServletException,java.io.IOException                  
  > void destroy() //webapplication关闭的时候                    
- > - **在非分布的情况下，通常Servlet在服务器中只有一个实例**
+ > **在非分布的情况下，通常Servlet在服务器中只有一个实例**             
  public class TestLifeCycleServlet extends HttpServlet{
 
 	public TestLifeCycleServlet() {
