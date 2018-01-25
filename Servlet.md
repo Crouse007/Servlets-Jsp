@@ -16,9 +16,9 @@
 
 
 ### 部署Servlet
-> ##### xml
+> #### xml
 >> *servlet-name* 随意设置            
->> *servlet-class* servlet最好复制                 
+>> *servlet-class* servlet（最好复制）                 
 >> *servlet-pattern* 在浏览器里输入什么地址才调用这个servlet,用/开头，相对于webapplication的跟路径(http://127.0.0.1:8888/test/abc)
       <servlet>
         <servlet-name>HW</servlet-name>
@@ -43,32 +43,32 @@
  > - 处理请求 service()
  > - 退出服务 destory()
  ##### API中的过程
- > void init(ServletConfig config) //init()方法只执行一次，第一次初始化的时候
- > void service(ServletRequest req,ServletResponse res)throws ServletException,java.io.IOException
- > void destroy() //webapplication关闭的时候
+ > void init(ServletConfig config) //init()方法只执行一次，第一次初始化的时候                 
+ > void service(ServletRequest req,ServletResponse res)throws ServletException,java.io.IOException                  
+ > void destroy() //webapplication关闭的时候                    
  > - **在非分布的情况下，通常Servlet在服务器中只有一个实例**
-	 public class TestLifeCycleServlet extends HttpServlet{
+ public class TestLifeCycleServlet extends HttpServlet{
 
-		public TestLifeCycleServlet() {
-			System.out.println("constructor!");
-		}
-
-		@Override
-		protected void doGet(HttpServletRequest requestq, HttpServletResponse response) throws ServletException, IOException {
-			System.out.println("doGet");
-		}
-
-		@Override
-		public void init(ServletConfig config) throws ServletException {
-			System.out.println("init");
-		}
-
-		@Override
-		public void destroy() {
-			System.out.println("destory");
-		}
-
+	public TestLifeCycleServlet() {
+		System.out.println("constructor!");
 	}
+
+	@Override
+	protected void doGet(HttpServletRequest requestq, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doGet");
+	}
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("init");
+	}
+
+	@Override
+	public void destroy() {
+		System.out.println("destory");
+	}
+
+}
 
 ### 用doGet和doPost方法处理请求
 > - `protected void doGet(HttpServletRequest request, HttpServletResponse response)`
