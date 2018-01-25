@@ -96,9 +96,10 @@
 > 可以使用Cookie的setXXX方法来设定一下相应的值       
 >> void	setValue(String newValue)/String getName()            
 >> void	setName(String name)/String getName()            
->> void	setMaxAge(int expiry)/int getMaxAge()            
->> 利用HttpServletResponse的void addCookie(Cookie cookie)方法将它设置到客户端            
->> 利用HttpServletRequest的Cookie\[\] getCookies()方法来读取客户端的所有Cookie           
+>> void	setMaxAge(int expiry)/int getMaxAge()  //不设置生存周期或者设置为-1，写入内存，属于该窗口或子窗口，浏览器关闭就消失；设置生存周期则写入到文件               
+>> 利用HttpServletResponse的void addCookie(Cookie cookie)方法将它设置到客户端            
+>> 利用HttpServletRequest的Cookie\[\] getCookies()方法来读取客户端的所有Cookie    
+
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
