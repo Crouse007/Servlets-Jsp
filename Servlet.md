@@ -69,8 +69,14 @@
 	}
 
 ### 用doGet和doPost方法处理请求
-> `protected void doGet(HttpServletRequest req, HttpServletResponse resp)`
-> `protected void doPost(HttpServletRequest req, HttpServletResponse resp)` 
+> `protected void doGet(HttpServletRequest request, HttpServletResponse response)`
+> `protected void doPost(HttpServletRequest request, HttpServletResponse response)` 
+> HttpServletRequest
 >> java.lang.String getParameter(java.lang.String name)
-
-	PrintWriter pw = response.getWriter();
+>> Enumeration<String> getParameterNames()
+>> String[] getParameterValues(String name)
+>> Map<String,String[]> getParameterMap()
+> ****
+> HttpServletResponse
+>> response.setContentType("text/html;charset=gb2312");  *设置MIME*
+>> PrintWriter pw = response.getWriter();
