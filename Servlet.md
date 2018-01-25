@@ -12,6 +12,7 @@
 >> - protected  void	doPost(HttpServletRequest req, HttpServletResponse resp) 
 
 > protected  void	doHead(HttpServletRequest req, HttpServletResponse resp) *只拿头信息,一般写浏览器的人用*
+
 > protected  void	service(HttpServletRequest req, HttpServletResponse resp) *一般不重写，service方法默认帮我们调用doPost或doGet*
 
 ### 部署Servlet
