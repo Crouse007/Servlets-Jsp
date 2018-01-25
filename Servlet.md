@@ -153,4 +153,10 @@
 	
 ### 会话跟踪 --- Session
 > 记录一系列的状态                             
-> **与Cookie的区别**：Cookie是记录在客户端；Session是记录在服务器端                   
+> **与Cookie的区别**：Cookie是记录在客户端；Session是记录在服务器端      
+> 与浏览器窗口或子窗口关联（给浏览器赋予独一无二的号码）
+> **Session的实现方法：** 
+>> 1. 通过Cookie实现，把SessionID放入临时Cookie      
+>> 2. 通过url重写实现,response.encodeURL() //1、转码 2、URL后加入SessionID，**最好加** 
+>
+> Session 有过期时间，在xml里配置
