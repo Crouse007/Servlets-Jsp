@@ -152,5 +152,5 @@
 	</servlet-mapping>
 	
 ### 会话跟踪 --- Session
-> 记录一系列的状态
-> **与Cookie的区别**：Cookie是记录在客户端；Session是记录在服务器端
+> 记录一系列的状态                             
+> **与Cookie的区别**：Cookie是记录在客户端；Session是记录在服务器端                   
