@@ -98,4 +98,28 @@
 >> void	setName(String name)/String getName()            
 >> void	setMaxAge(int expiry)/int getMaxAge()            
 >> 利用HttpServletResponse的void addCookie(Cookie cookie)方法将它设置到客户端            
->> 利用HttpServletRequest的Cookie[] getCookies()方法来读取客户端的所有Cookie           
+>> 利用HttpServletRequest的Cookie/[/] getCookies()方法来读取客户端的所有Cookie           
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doGet");
+		for (int i = 0; i < 3; i++) {
+			Cookie cookie = new Cookie("Session-Cookie-"+i, "Cookie-value-S"+i);
+			response.addCookie(cookie);
+			
+			cookie = new Cookie("Persistent-Cookie-"+i, "Cookie-value-P"+i);
+			cookie.setMaxAge(3600);
+			response.addCookie(cookie);
+		}
+		
+		response.setContentType("text/html;charset=gb2312");
+		PrintWriter pw = response.getWriter();
+		
+		Cookie[] cookies = request.getCookies();
+		for (int i = 0; i < cookies.length; i++) {
+			Cookie cookie = cookies[i];
+			pw.print(cookie.getName());
+			pw.println(cookie.getValue());
+			pw.println("</br>");
+		}
+	}
