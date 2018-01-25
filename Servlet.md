@@ -84,3 +84,18 @@
 > *HttpServletResponse*                
 >> response.setContentType("text/html;charset=gb2312");  *设置MIME*                    
 >> PrintWriter pw = response.getWriter();           
+
+### 处理Cookie
+> Http协议的无连接性要求出现一种保存C/S状态的机制                
+> 服务器可以向客户端写内容，只能写入文本内容            
+> 客户端可以阻止服务器写入            
+> 只能拿自己webapp写入的东西            
+> Cookie:保存到客户端的一个文本文件，与特定客户相关       
+> Cookie以“名-值”对的形式保存数据         
+> 创建Cookie: new Cookie(name,value)        
+> 可以使用Cookie的setXXX方法来设定一下相应的值       
+>> void	setValue(String newValue)/String getName()            
+>> void	setName(String name)/String getName()            
+>> void	setMaxAge(int expiry)/int getMaxAge()            
+>> 利用HttpServletResponse的void addCookie(Cookie cookie)方法将它设置到客户端            
+>> 利用HttpServletRequest的Cookie[] getCookies()方法来读取客户端的所有Cookie           
