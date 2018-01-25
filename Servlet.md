@@ -94,10 +94,10 @@
 > Cookie以“名-值”对的形式保存数据         
 > Cookie分为两种           
 >> 1. 属于窗口/子窗口          
->> 2. 属于文本      
+>> 2. 属于文本              
 >
-> 创建Cookie: new Cookie(name,value)                                            
-> 可以使用Cookie的setXXX方法来设定一下相应的值 	              
+> 创建Cookie: new Cookie(name,value)                                                                               
+> 可以使用Cookie的setXXX方法来设定一下相应的值                     	              
 >> void	setValue(String newValue)/String getName()            
 >> void	setName(String name)/String getName()            
 >> void	setMaxAge(int expiry)/int getMaxAge()  //不设置生存周期或者设置为-1，写入内存，属于该窗口或子窗口，浏览器关闭就消失；设置生存周期则写入到文件               
