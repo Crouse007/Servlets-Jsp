@@ -90,14 +90,14 @@
 > 服务器可以向客户端写内容，只能写入文本内容            
 > 客户端可以阻止服务器写入            
 > 只能拿自己webapp写入的东西            
-> Cookie:保存到客户端的一个文本文件，与特定客户相关       
+> Cookie:保存到客户端的一个文本文件，与特定客户相关                           
 > Cookie以“名-值”对的形式保存数据         
 > Cookie分为两种           
 >> 1. 属于窗口/子窗口          
 >> 2. 属于文本              
 >
-> 创建Cookie: new Cookie(name,value)                                                                               
-> 可以使用Cookie的setXXX方法来设定一下相应的值                     	              
+> 创建Cookie: new Cookie(name,value)                      
+> 可以使用Cookie的setXXX方法来设定一下相应的值                           	              
 >> void	setValue(String newValue)/String getName()            
 >> void	setName(String name)/String getName()            
 >> void	setMaxAge(int expiry)/int getMaxAge()  //不设置生存周期或者设置为-1，写入内存，属于该窗口或子窗口，浏览器关闭就消失；设置生存周期则写入到文件               
