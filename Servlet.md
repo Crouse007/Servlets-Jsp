@@ -46,29 +46,30 @@
  > void init(ServletConfig config) //init()方法只执行一次，第一次初始化的时候                 
  > void service(ServletRequest req,ServletResponse res)throws ServletException,java.io.IOException                  
  > void destroy() //webapplication关闭的时候                    
- > **在非分布的情况下，通常Servlet在服务器中只有一个实例**             
-		 public class TestLifeCycleServlet extends HttpServlet{
+ > **在非分布的情况下，通常Servlet在服务器中只有一个实例**     
 
-			public TestLifeCycleServlet() {
-				System.out.println("constructor!");
-			}
+	 public class TestLifeCycleServlet extends HttpServlet{
 
-			@Override
-			protected void doGet(HttpServletRequest requestq, HttpServletResponse response) throws ServletException, IOException {
-				System.out.println("doGet");
-			}
-
-			@Override
-			public void init(ServletConfig config) throws ServletException {
-				System.out.println("init");
-			}
-
-			@Override
-			public void destroy() {
-				System.out.println("destory");
-			}
-
+		public TestLifeCycleServlet() {
+			System.out.println("constructor!");
 		}
+
+		@Override
+		protected void doGet(HttpServletRequest requestq, HttpServletResponse response) throws ServletException, IOException {
+			System.out.println("doGet");
+		}
+
+		@Override
+		public void init(ServletConfig config) throws ServletException {
+			System.out.println("init");
+		}
+
+		@Override
+		public void destroy() {
+			System.out.println("destory");
+		}
+
+	}
 
 ### 用doGet和doPost方法处理请求
 > - `protected void doGet(HttpServletRequest request, HttpServletResponse response)`
