@@ -73,7 +73,7 @@
 
 ### 用doGet和doPost方法处理请求
 > - `protected void doGet(HttpServletRequest request, HttpServletResponse response)`
-> - `protected void doPost(HttpServletRequest request, HttpServletResponse response)`
+> - `protected void doPost(HttpServletRequest request, HttpServletResponse response)`                
 > *HttpServletRequest*
 >> java.lang.String getParameter(java.lang.String name)              
 >> Enumeration<String> getParameterNames()            
