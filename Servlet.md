@@ -98,7 +98,7 @@
 >> void	setName(String name)/String getName()            
 >> void	setMaxAge(int expiry)/int getMaxAge()            
 >> 利用HttpServletResponse的void addCookie(Cookie cookie)方法将它设置到客户端            
->> 利用HttpServletRequest的Cookie/[/] getCookies()方法来读取客户端的所有Cookie           
+>> 利用HttpServletRequest的Cookie\[\] getCookies()方法来读取客户端的所有Cookie           
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
