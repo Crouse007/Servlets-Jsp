@@ -171,7 +171,9 @@
 >> - String getId()             
 >> - boolean isNew()          
 >> - long getCreationTime()          
->> - long getLastAccessedTime()       
+>> - long getLastAccessedTime()    
+>> - int getMaxInactiveInterval()
+>> - void setMaxInactiveInterval(int interval)
 >              
 > 其他常用方法          
 >> - request.getSession(true);	//true:无建有取  false:有取不创建          
@@ -224,4 +226,39 @@
 		}
 
 ### Application
-> 用于保存整个
+> 用于保存整个WebApplication的生命周期内都可以访问到的数据
+> 在API中表现为ServletContext
+> 通过HttpServlet的getServletContext()方法拿到
+> 通过ServletContext的get/setAttribute()方法取得/设置相关属性
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO 自动生成的方法存根
+		response.setContentType("text/html;charset=gb2312");
+		PrintWriter pw = response.getWriter();
+		
+		ServletContext application = this.getServletContext();
+		
+		Integer accessCount = (Integer)application.getAttribute("accessCount");
+		String heading;
+		if(accessCount==null) {
+			accessCount = new Integer(0);
+		}else{
+			accessCount = new Integer(accessCount.intValue()+1);
+		}
+		
+		application.setAttribute("accessCount", accessCount);
+		System.out.println(accessCount.intValue());
+	}
+
+### 配置在包里面的类
+> 文件夹必须建全
+> servlet-class 必须写全(com.servlet.HelloWorldServlet)
+
+### Servlet中使用 Bean              
+> 在Servlet中使用Bean:           
+>> 属性名称第一个字母必须小写，比如：·private· productId          
+>> 一般具有 getters and setters             
+>
+> 但Bean不应具有GUI表现
+> 一般是用来实现某一业务逻辑或取得特定结果
