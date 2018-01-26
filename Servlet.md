@@ -156,7 +156,65 @@
 > **与Cookie的区别**：Cookie是记录在客户端；Session是记录在服务器端      
 > 与浏览器窗口或子窗口关联（给浏览器赋予独一无二的号码）
 > **Session的实现方法：** 
->> 1. 通过Cookie实现，把SessionID放入临时Cookie      
->> 2. 通过url重写实现,response.encodeURL() //1、转码 2、URL后加入SessionID，**最好加** 
->
-> Session 有过期时间，在xml里配置
+>> 1. 通过Cookie实现，把SessionID放入临时Cookie                  
+>> 2. 通过url重写实现,response.encodeURL() //1、转码 2、URL后加入SessionID，**最好加**            
+>             
+> Session 有过期时间，在xml里配置         
+> 在Session里写东西，在其他页面里面检查就可以知道是否登录       
+> HttpSession 常用方法              
+>> = Object getAttribute(String name)             
+>> - void setAttribute(String name, Object value)             
+>> - String getId()             
+>> - boolean isNew()          
+>> - long getCreationTime()          
+>> - long getLastAccessedTime()       
+>              
+> 其他常用方法          
+>> - request.getSession(true);	//true:无建有取  false:有取不创建          
+>> - response.setContentType("text/html");     
+>> - new Date(mySession.getCreationTime());             
+>> - <a href="+response.encodeURL("SessionInfoServlet")+">refresh</a>         
+>> - request.isRequestedSessionIdValid() //判断Session是否有效          
+>> - request.isRequestedSessionIdFromURL()           
+>> - request.isRequestedSessionIdFromCookie()         
+>> - request.getRequestedSessionId()           
+    
+	public class SessionInfoServlet extends HttpServlet{
+
+		@Override
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			HttpSession mySession = request.getSession(true);	//true:无建有取  false:有取不创建
+			Integer accessCount = (Integer)mySession.getAttribute("accessCount");
+			String heading;
+			if(accessCount==null) {
+				accessCount = new Integer(0);
+				heading="Welcome,Newcomer";
+			}else{
+				heading="Welcome back";
+				accessCount = new Integer(accessCount.intValue()+1);
+			}
+			mySession.setAttribute("accessCount", accessCount);
+			response.setContentType("text/html");
+			PrintWriter pw = response.getWriter();
+			pw.println("<html>");
+			pw.println("<head>");
+			pw.println("<title>Session info Servlet</title>");
+			pw.println("</head>");
+			pw.println("<body>");
+			pw.println("<h3>Session Infomation</h3>");
+			pw.println("New session: "+ mySession.isNew());
+			pw.println("<br>Session ID: "+mySession.getId());
+			pw.println("<br>Session creation time: "+new Date(mySession.getCreationTime()));
+			pw.println("<br>Session last accessed time: "+new Date(mySession.getLastAccessedTime()));
+			pw.println("<h3>Request Infomation</h3>");
+			pw.println("SessionID from request: "+request.getRequestedSessionId());
+			pw.println("<br>SessionID via Cookie: "+request.isRequestedSessionIdFromCookie());
+			pw.println("<br>SessionID via URL: "+request.isRequestedSessionIdFromURL());
+			pw.println("<br>Valid SessionID: "+request.isRequestedSessionIdValid());
+			pw.println("<br><a href="+response.encodeURL("SessionInfoServlet")+">refresh</a>");
+			pw.println("<h3>Session Tracking</h3>");
+			pw.println("<h4>"+heading+"</h4>");
+			pw.println("Number of Previous Access: "+accessCount.intValue());
+			pw.println("</body></html>");
+			pw.close();
+		}
