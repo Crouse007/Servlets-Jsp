@@ -153,7 +153,11 @@
 	
 ### 会话跟踪 --- Session
 > 记录一系列的状态                             
-> **与Cookie的区别**：Cookie是记录在客户端；Session是记录在服务器端      
+> **与Cookie的区别**：
+>> 1.Cookie是记录在客户端；Session是记录在服务器；
+>> 2.Session不像Cookie拥有路径访问的问题，同一个application的Servlet/Jsp可以共享同一个Session，前提是同一个客户端窗口
+>> 3.Session可以存入任何东西
+>
 > 与浏览器窗口或子窗口关联（给浏览器赋予独一无二的号码）
 > **Session的实现方法：** 
 >> 1. 通过Cookie实现，把SessionID放入临时Cookie                  
@@ -162,7 +166,7 @@
 > Session 有过期时间，在xml里配置         
 > 在Session里写东西，在其他页面里面检查就可以知道是否登录       
 > HttpSession 常用方法              
->> = Object getAttribute(String name)             
+>> - Object getAttribute(String name)             
 >> - void setAttribute(String name, Object value)             
 >> - String getId()             
 >> - boolean isNew()          
@@ -218,3 +222,6 @@
 			pw.println("</body></html>");
 			pw.close();
 		}
+
+### Application
+> 用于保存整个
