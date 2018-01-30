@@ -5,6 +5,13 @@
 > - 一个Servlet被调用的时候默认掉用service方法
 > - *构建路径-> 引入外部归档 导入 servlet-api.jar*
 
+### 如何掌握Servlet
+> - 从HttpServlet继承
+> - 重写doGet/doPost方法
+> - 在web.xml中配置
+> - 请求转发
+> - 使用javabean
+
 ### HttpServlet
 > HttpServlet() 被容器调用
 > ###### 常用方法
@@ -262,3 +269,8 @@
 >
 > 但Bean不应具有GUI表现
 > 一般是用来实现某一业务逻辑或取得特定结果
+
+### Filter(Servlet 2.3) 过滤器
+### Linstener(Servlet 2.4) 监听器
+
+
