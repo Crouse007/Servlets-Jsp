@@ -89,7 +89,7 @@
 			contentType="text/html; charset=ISO-8859-1"
 			%>
 > **include**
-> 将指定的JSP程序或者HTML文件包含进来
+> 将指定的JSP程序或者HTML文件*包含*进来
 > 格式：
 >> <%@include file="fileUrl"%>
 >
@@ -100,5 +100,39 @@
 
 ### Action 动作指令
 > 在运行期间的命令
-
+> 常见的Action
+>> jsp:useBean
+>>> jsp:setProperty
+>>> jsp:getProperty
+>>
+>> jsp:include 
+>> jsp:forward
+>> jsp:plugin
 >
+>**jsp:include/jsp:param**
+> 用于动态包含JSP程序或HTML文件等
+> 除非这个指令会被执行到，否则它是不会被Tomcat等JSP Engine编译
+> 格式
+>> <jsp:include page="URLSpec" flush="true"/>
+>> <jsp:inlucde page="TRLSpec" flush="true">	//flush填true
+>> 	<jsp:param name="ParamName" value="paramValue" />
+>> </jsp:include>	
+>
+> jsp:param用来设定include文件时的参数和对应的值
+	
+	<% if( request.getParameter("computer").equals("division")) { %>
+		<jsp:include page="divide.jsp">
+			<jsp:param value="v1" name="<%=value1%>>"/>
+			<jsp:param value="v2" name="<%=value2%>>"/>
+		</jsp:include>
+	<%}else{} %>
+> **jsp:forward/jsp:param**
+> 用于将一个jsp的内容传到page所指定的jsp程序或者Servlet中处理（URL）
+> 格式:
+>> <jsp:forward page="urlSpec" flush="true"/>
+>> <jsp:forward page="urlSpec" flush="true">
+>> 	<jsp:param name="paramName" value="paramValue"/>
+>> </jsp:forward>
+>> <jsp:param>用于指定参数和其对应值
+>
+> forward的页面和forward到的页面用的同一个request
