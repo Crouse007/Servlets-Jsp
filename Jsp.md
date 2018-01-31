@@ -72,8 +72,8 @@
 > 指明与JSP Container的沟通方式
 > 基本格式
 >> import
->> errorPage
->> isErrorPage
+>> errorPage 填写出错后跳转的Url
+>> isErrorPage 出错后显示的界面 <%= exception.getMessage()%>
 >> contentType
 
    	<%@page language="java"|
@@ -88,3 +88,17 @@
 			isErrorPage="false|true"|
 			contentType="text/html; charset=ISO-8859-1"
 			%>
+> **include**
+> 将指定的JSP程序或者HTML文件包含进来
+> 格式：
+>> <%@include file="fileUrl"%>
+>
+> JSP Engine会在JSP程序的转换时期先把file属性设定的文件包含进来，然后开始执行转换及编译工作,*效率高*
+> 限制：
+>> *一般用来包含非动态的代码，不能带参数*
+>> <%@include file="TitleBar.jsp?usr=abc"%>  //错误
+
+### Action 动作指令
+> 在运行期间的命令
+
+>
