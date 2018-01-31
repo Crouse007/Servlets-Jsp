@@ -62,3 +62,29 @@
 > 相当于在编译期间的命令
 > 格式
 >> <%@Directive 属性="属性值"%>
+>
+> 常见的Directive
+>> page            
+>> include            
+>> taglib
+> 
+> **page**
+> 指明与JSP Container的沟通方式
+> 基本格式
+>> import
+>> errorPage
+>> isErrorPage
+>> contentType
+
+   	<%@page language="java"|
+			extends="className"|
+			import="import list"|  //引用什么包
+			buffer="none | kb size "|    //默认8kb
+			session="true|false"|       //是否使用session，默认true
+			autoFlush="true|false"|         //缓冲器是否自动清除，默认true
+			isThreadSafe="true"|      //默认就好，废用
+			info="infoText"|        //一般不用
+			errorPage="errorPageUrl"|        
+			isErrorPage="false|true"|
+			contentType="text/html; charset=ISO-8859-1"
+			%>
