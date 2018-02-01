@@ -129,7 +129,7 @@
 > **jsp:forward/jsp:param**
 > 用于将一个jsp的内容传到page所指定的jsp程序或者Servlet中处理（URL）
 > 格式:
->> <jsp:forward page="urlSpec" flush="true"/>
+>> <jsp:forward page="urlSpec" flush="true"/> flush一直为true
 >> <jsp:forward page="urlSpec" flush="true">
 >> 	<jsp:param name="paramName" value="paramValue"/>
 >> </jsp:forward>
