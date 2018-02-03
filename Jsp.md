@@ -122,7 +122,7 @@
 >> <jsp:include page="URLSpec" flush="true"/>                 
 >> 二：              
 >> <jsp:inlucde page="TRLSpec" flush="true">	//flush填true                
->> 	<jsp:param name="ParamName" value="paramValue" />                
+>>      <jsp:param name="ParamName" value="paramValue" />                
 >> </jsp:include>                	
 >
 > jsp:param用来设定include文件时的参数和对应的值
