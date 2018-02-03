@@ -2,8 +2,8 @@
 > 保留两位小数
 >> Math.floor(cost\*100)/100
 # Servlet 可以在任何服务器端运行的小程序
-> 如何掌握Servlet            
-> HttpServlet            
+> 如何掌握Servlet                           
+> HttpServlet             
 > 部署Servlet                        
 > Servlet的生命周期                     
 > 用doGet和doPost方法处理请求                                          
