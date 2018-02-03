@@ -288,10 +288,12 @@
 #### 从JSP调用Servlet
 > <jsp:forward>
 > sendRedirect
+> pageContext.forward("xxx.jsp") 同一个request
 > *******************
 #### 从Servlet调用JSP
 > RequestDispatcher接口的forward(req,res)方法
->> getServletConfig().getServletContext().getRequestDispatcher("/xxx.jsp").forward(req,res);                               
+>> - request.getRequestDispatcher("xxx.jsp").forward(req.res);
+>> - getServletConfig().getServletContext().getRequestDispatcher("/xxx.jsp").forward(req,res);                               
 > 请求信息需要显示传递（在req,res参数中）                     
 > 或者通过sendRedirect
 
