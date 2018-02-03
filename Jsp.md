@@ -107,8 +107,8 @@
 > 在运行期间的命令               
 > 常见的Action:         
 >> - jsp:useBean
->>> jsp:setProperty
->>> jsp:getProperty
+>>> - jsp:setProperty
+>>> - jsp:getProperty
 >>
 >> - jsp:include 
 >> - jsp:forward
@@ -119,11 +119,11 @@
 > 除非这个指令会被执行到，否则它是不会被Tomcat等JSP Engine编译                  
 > 格式:
 >> 一：             
->> <jsp:include page="URLSpec" flush="true"/>
+>> <jsp:include page="URLSpec" flush="true"/>                 
 >> 二：              
->> <jsp:inlucde page="TRLSpec" flush="true">	//flush填true
->> 	<jsp:param name="ParamName" value="paramValue" />
->> </jsp:include>	
+>> <jsp:inlucde page="TRLSpec" flush="true">	//flush填true                
+>> 	<jsp:param name="ParamName" value="paramValue" />                
+>> </jsp:include>                	
 >
 > jsp:param用来设定include文件时的参数和对应的值
 	
