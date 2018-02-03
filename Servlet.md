@@ -181,7 +181,8 @@
 >> - long getLastAccessedTime()    
 >> - int getMaxInactiveInterval()
 >> - void setMaxInactiveInterval(int interval)
->              
+>> - invalidate() 关闭session及其绑定
+>              
 > 其他常用方法          
 >> - request.getSession(true);	//true:无建有取  false:有取不创建          
 >> - response.setContentType("text/html");     
