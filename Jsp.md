@@ -190,11 +190,13 @@
 	<jsp:getProperty name="cb" property="count"/>
 
 > **jsp:setProperty**的格式:
->> - <jsp:setProperty name="beanName" property="propertyName"|property="\*" value="property value"|parm="parmName"/>                     
+>> - <jsp:setProperty name="beanName" property="propertyName"|property="\*" value="property value"|parm="parmName"/>   
+>>
 >> 相当于调用beanName.setPropertyName(value)方法，setXxx()方法             
 >
 > **jsp:getProperty**的格式：
->> - <jsp:getProperty name="beanName" property="propertyName" />                  
+>> - <jsp:getProperty name="beanName" property="propertyName" />   
+>>
 >> 相当于调用beanName.getPropertyName(value)方法，getXxx()方法                   
 >
 > **建立表单参数和Bean属性之间的关联**
