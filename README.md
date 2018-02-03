@@ -2,7 +2,7 @@
 > 保留两位小数
 >> Math.floor(cost\*100)/100
 # JSP - Java Server Pages
-> JSP基础语法简介
+> JSP基础语法简介               
 > Declration --- 声明       
 > Scriptlet                     
 > Comment                
