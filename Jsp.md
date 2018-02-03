@@ -136,14 +136,14 @@
 	<%}else{} %>
 
 > **************
-#### sp:forward/jsp:param
+#### jsp:forward/jsp:param
 > 用于将一个jsp的内容传到page所指定的jsp程序或者Servlet中处理（URL）                 
 > 用于跳转，如登录跳转，用requsest.getParamter()获取参数
 > 常用格式：
 >> 一：           
->> <jsp:forward page="urlSpec" flush="true"/> flush一直为true   
->> 二：          
->> <jsp:forward page="urlSpec" flush="true">                    
+>> <jsp:forward page="urlSpec" flush="true"/> flush一直为true                       
+>> 二：                                    
+>> <jsp:forward page="urlSpec" flush="true">		                    
 >> 	<jsp:param name="paramName" value="paramValue"/>       
 >> </jsp:forward>           
 >> <jsp:param>用于指定参数和其对应值            
