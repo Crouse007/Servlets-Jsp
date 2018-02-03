@@ -142,10 +142,11 @@
 > 常用格式：
 >> 一：           
 >> <jsp:forward page="urlSpec" flush="true"/> flush一直为true                       
->> 二：                                    
->> <jsp:forward page="urlSpec" flush="true">				                    
->> 	<jsp:param name="paramName" value="paramValue"/>       
->> </jsp:forward>           
+>> 二：                 
+
+	<jsp:forward page="urlSpec" flush="true">				                    
+		<jsp:param name="paramName" value="paramValue"/>       
+	</jsp:forward>           
 >> <jsp:param>用于指定参数和其对应值            
 >
 > **<jsp:forward>与response.sendRedirect的区别**
@@ -164,18 +165,20 @@
 >
 > 基本用法:     
 >> 一：            
->> <jsp:useBean id="beanName" scope="page|request|session|application" class="package.BeanClass" type="typeName"/>
+>> <jsp:useBean id="beanName" scope="page|request|session|application" class="package.BeanClass" type="typeName"/>            
 >> 二：                 
->> <jsp:useBean ...>
->> 	<jsp:setProperty ...>
->>	<jsp:getProperty ...>
->> </jsp:useBean>    
+
+	<jsp:useBean ...>
+		<jsp:setProperty ...>
+		<jsp:getProperty ...>
+	</jsp:useBean>    
 >
 > jsp:useBean各项参数及含义           
 >> - id:对象实例名称            
 >> - scope:Bean的作用范围，默认为page，对整个jsp页面有效            
 >> - class:Bean类名称           
->> - type:Bean实例类型，可以是本类或其父类，或实现的接口默认为本类           
+>> - type:Bean实例类型，可以是本类或其父类，或实现的接口默认为本类      
+>>
 >> scope各项参数的意义：           
 >>> - page:仅含使用JavaBean的页面                      
 >>> - request:有效范围仅限使用javaBean的请求
