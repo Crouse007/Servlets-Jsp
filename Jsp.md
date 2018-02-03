@@ -143,7 +143,7 @@
 >> 一：           
 >> <jsp:forward page="urlSpec" flush="true"/> flush一直为true                       
 >> 二：                                    
->> <jsp:forward page="urlSpec" flush="true">		                    
+>> <jsp:forward page="urlSpec" flush="true">				                    
 >> 	<jsp:param name="paramName" value="paramValue"/>       
 >> </jsp:forward>           
 >> <jsp:param>用于指定参数和其对应值            
