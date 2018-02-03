@@ -1,3 +1,10 @@
+# 小笔记
+> 保留两位小数
+> 万能转码
+# Http基础
+> 返回码              
+> Web Application目录结构              
+> web.xml          
 # Servlet 可以在任何服务器端运行的小程序
 > 如何掌握Servlet                           
 > HttpServlet             
