@@ -10,7 +10,7 @@
 > 处理Cookie                     
 > 会话跟踪 --- Session                     
 > Application                     
->　配置在包里面的类                     
+> 配置在包里面的类                     
 > Servlet中使用 Bean                     
 > Filter(Servlet 2.3) 过滤器（未写）                     
 > Linstener(Servlet 2.4) 监听器（未写）      
