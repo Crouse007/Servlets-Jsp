@@ -279,6 +279,7 @@
 >> - Object getAttribute(String name)
 >> - boolean isNew();
 >> - getId()
+>> - invalidate() 关闭session及其绑定
 >
 > *************************
 #### application
