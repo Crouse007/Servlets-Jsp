@@ -1,6 +1,3 @@
-笔记
-> 保留两位小数
->> Math.floor(cost\*100)/100
 # Servlet 可以在任何服务器端运行的小程序
 > 如何掌握Servlet                           
 > HttpServlet             
