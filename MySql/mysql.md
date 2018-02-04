@@ -33,6 +33,12 @@
 > 7.重启 mysql
 **************
 #### SQL
-> SQL:Structure Query Language
+> SQL:Structure Query Language（结构化查询语言）
 > 继续所有重要的数据库管理系统都支持SQL
-> 
+> 各数据库厂商都支持ISO的SQL标准（普通话）
+> 各数据库厂商在标准的基础上做了自己的扩展（方言）
+> sql分类
+>> - DDL(Data Definition Language) : 数据定于语言，定义数据库对象：库、表、列等；
+>> - DML(Data Manipulation Language) : 数据操作语言，操作数据库*表中*的记录（数据）
+>> - DQL(Data Query Language) : 数据查询语言，用来查询数据
+>> - DCL(Data Control Language) ： 数据控制语言，用来定义访问权限和安全级别
