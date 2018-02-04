@@ -47,7 +47,7 @@
 *****
 ### DDL create alter drop
 > 数据定义语言
-> 对 *数据库 表 列 *进行操作
+> 对 *数据库 表 列*进行操作
 #### 创建数据库
 > 语法
 >> - create {database|schema}[if not exists] dbname [create_specification[,create_specification]...]
@@ -156,9 +156,9 @@
 > - 在mysql中，字符串类型和日期类型都要用单引号括起来。 eg : 'tom' '2015-09-04'
 > - 空值 : null 
 #### 查询表中所有数据
-> seleter * from 表名;
+> `select` * from 表名;
 #### 插入操作 ： insert
-> insert into table_name(列名1，列名2，...) values(列值1，列值2，...)；
+> `insert into` table_name(列名1，列名2，...) `values`(列值1，列值2，...)；
 > 注意:
 >> - 列名与列值类型、个数、顺序要一一对应
 >> - 可以把列名当作java中的形参，把列值当作实参
@@ -166,3 +166,5 @@
 >> - 如果插入空值，请用 null
 >> - 插入的日期和字符一样，都使用引号括起来
 
+    mysql> insert into emp(id,name,gender,birthday,salary,entry_date,resume)
+        -> values(1,'tom','男','2015-09-24',10000,'2015-09-25','good boy');
