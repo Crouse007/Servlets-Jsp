@@ -193,7 +193,7 @@
      where condition /\*行条件\*/
      group by grouping_columns /\*对结果分组*\/
      having condition /\*分组后的行条件\*/
-     order by sorting_columns /\*对结果分组\*/
+     order by sorting_columns /\*对结果分组，排序\*/
      limit offset_start,row_cow_count /\*结果限定,mysql独有的，分页用的\*/
 #### 基础查询
 > 查询所有列
@@ -225,4 +225,49 @@
 >> -% : 任意 0~n 个字符
 >
 > eg: '%张%' '姜\_'
+#### 字段控制查询
+> 去除重复记录
+> select `distinct` deptno,mgr from emp;
+#### 滤空函数:
+> select sal+comn from emp;(任何数+null=null)
+> select sal+`ifnull(comn,0)` from emp;
+#### 给列加别名
+> select sal+ifnull(comn,0) `as` total from emp;
+> select sname as 姓名 , gender 性别 from stu; (*空格就相当于as*)
+#### 排序 order by 列名 asc（默认） desc
+> select * from stu `order by` age `asc`;
+> select * from emp order by salay desc,empno asc; (salary降序，若相同则按empno升序)
+#### 聚合函数  sum avg max min count
+> 聚合函数是用来做纵向运算的函数
+>> - count():统计指定列不为null的记录行数，**统计数量**
+>> - max(): 计算指定列的最大值，如果指定列是字符串类型，那么使用字符串排序运算
+>> - min(): 计算指定列的最小值，如果指定列是字符串类型，那么使用字符串排序运算
+>> - sum()：计算指定列的数值和，如果指定列不是数值类型，那么计算结果为0,**自动滤空**
+>> - avg(): 计算指定列的平均值，如果指定列不是数值类型，那么计算结果为0，**自动滤空**
 >
+> count:
+>> select count(age) from stu;
+>> select count(\*) as cnt from stu; //确定有效行数(记录数)
+>> select count(\*) from emp where salary > 2500; 
+>> select count(comm),count(mgy) from emp;
+>> select count(\*) from emp where comn is not null and msg is not null;
+>
+> sum:
+>> select sum(salary) from emp; 
+>> select sum(salary),sum(comm) from emp;
+>> select sum(salary+ifnull(comm,0)) from emp;
+>
+> avg:
+>> select avg(salary) from emp;
+>
+> max/min:
+>> select max(salary),min(salary) from emp;
+>
+#### 注意 order by 与 where 的顺序：
+> select  from  where   order by 
+> select  from  order by   where (会报错)
+#### 分组查询 group by
+> 例如要查询每个部门的工资之和，这说明要使用部门来分组
+> 
+
+
