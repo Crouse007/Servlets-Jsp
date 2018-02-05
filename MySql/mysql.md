@@ -166,5 +166,63 @@
 >> - 如果插入空值，请用 null
 >> - 插入的日期和字符一样，都使用引号括起来
 
-    mysql> insert into emp(id,name,gender,birthday,salary,entry_date,resume)
-        -> values(1,'tom','男','2015-09-24',10000,'2015-09-25','good boy');
+    mysql> insert into emp
+        -> values(1,'tom','男','2015-09-24',10000,'2015-09-25','good boy');
+#### 修改操作
+> `update` 表名 `set` 列名1=列值1，列名2=列值2...where 列名=值；
+> update emp set salary=5000;
+> update emp set salary=3000 where name='tom'; 相当于 if( name == 'tom' ）即使不存在也不会报错
+> update emp set salary=4000,gender='m' where name='jerry';
+> update emp set `salary=salary+1000` where name='菜10';
+#### 删除操作 delete
+> `delete from` 表名 [where 列名=值];
+> delete from emp where name='tom';
+> 删除表中所有记录:
+>> delete from emp;  可以根据日志恢复
+>> turncate from emp; 删除表再给你创建一个，不能恢复，执行速度快
+********************************
+### DQL 操作 select
+> 数据查询语言(重要)
+> 数据库执行 DQL 语句不会对数据进行改变，而是让数据库发送结果集给客户端
+> 语法：
+>> - select 列名 from 表名 
+>> [where -> group by -> having -> order by]
+
+    select selection_list /\*要查询的列名称\*/
+     from table_list /\*要查询的表名称\*/
+     where condition /\*行条件\*/
+     group by grouping_columns /\*对结果分组*\/
+     having condition /\*分组后的行条件\*/
+     order by sorting_columns /\*对结果分组\*/
+     limit offset_start,row_cow_count /\*结果限定,mysql独有的，分页用的\*/
+#### 基础查询
+> 查询所有列
+>> - select * from table_name;
+> 查询指定列
+>> - select sid,sname,age from stu;
+#### 条件查询
+> 条件查询就是在查询时给出 where 子句
+> 在  where 子句中可以使用如下运算符及关键字：
+>> - =、!=、<>、<、<=、>、>=；
+>> - between ... and ...;
+>> - in(set,...); 在固定的范围内
+>> - is null ; is not null
+>> - and
+>> - or
+>> - not
+>
+> select * from stu where sid in('s_1001','s_1002','s_1003');
+> select * from stu where sid not in('s_1001','s_1002','s_1003');
+> select * from stu where age is null;
+>
+> select * from stu  where age >=20 and age<=40;
+> select * from stu  where age between 20 and 40; 与上语法一样，数据反向则不行
+>
+> select * from stu where gender<>'male';
+#### 模糊查询 like
+> 通配符：
+>> -\_ : 任意一个字符
+>> -% : 任意 0~n 个字符
+>
+> eg: '%张%' '姜\_'
+>
